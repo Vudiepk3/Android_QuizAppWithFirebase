@@ -13,16 +13,16 @@
         android:theme="@style/Theme.Android_QuizAppWithFirebase"
         tools:targetApi="31">
         <activity
-            android:name=".QuizActivity"
+            android:name=".Activities.QuizActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".SubjectActivity"
+            android:name=".Activities.SubjectActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".Activities.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package com.example.android_quizappwithfirebase;
+package com.example.android_quizappwithfirebase.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.android_quizappwithfirebase.QuizListAdapter;
+import com.example.android_quizappwithfirebase.QuizModel;
+import com.example.android_quizappwithfirebase.R;
 import com.example.android_quizappwithfirebase.databinding.ActivitySubjectBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
@@ -18,7 +21,6 @@ import java.util.List;
 public class SubjectActivity extends AppCompatActivity {
     private ActivitySubjectBinding binding;
     private List<QuizModel> quizModelList;
-    private QuizListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +38,6 @@ public class SubjectActivity extends AppCompatActivity {
             binding.ImageSlide.setImageResource(image);
             binding.subjectName.setText(name);
         }
-
         // Khởi tạo danh sách quizModelList
         quizModelList = new ArrayList<>();
 
@@ -50,7 +51,7 @@ public class SubjectActivity extends AppCompatActivity {
         binding.progressBar.setVisibility(View.GONE);
 
         // Khởi tạo và gán adapter cho RecyclerView
-        adapter = new QuizListAdapter(quizModelList);
+        QuizListAdapter adapter = new QuizListAdapter(quizModelList);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerView.setAdapter(adapter);
     }
@@ -69,8 +70,11 @@ public class SubjectActivity extends AppCompatActivity {
                 // Duyệt qua mỗi child node trong dataSnapshot
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     // Parse dataSnapshot thành đối tượng QuizModel
+                    String subjectName = binding.subjectName.getText().toString();
+                    int subjectId = getSubjectId(subjectName);
+                    String strSubjectId = String.valueOf(subjectId);
                     QuizModel quizModel = snapshot.getValue(QuizModel.class);
-                    if (quizModel != null) {
+                    if (quizModel != null && quizModel.getId().equals(strSubjectId)) {
                         // Thêm quizModel vào danh sách
                         quizModelList.add(quizModel);
                     }
@@ -82,4 +86,27 @@ public class SubjectActivity extends AppCompatActivity {
             // Xử lý khi có lỗi xảy ra trong quá trình lấy dữ liệu
         });
     }
+    public int getSubjectId(String subjectName) {
+        switch (subjectName) {
+            case "Toán Học":
+                return 1;
+            case "Vật Lý":
+                return 2;
+            case "Hoá Học":
+                return 3;
+            case "Sinh Học":
+                return 4;
+            case "Tiếng Anh":
+                return 5;
+            case "Lịch Sử":
+                return 6;
+            case "Địa Lý":
+                return 7;
+            case "Giáo Dục Công Dân":
+                return 8;
+            default:
+                return 0; // Trả về giá trị mặc định nếu không khớp với bất kỳ môn học nào
+        }
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.example.android_quizappwithfirebase;
+package com.example.android_quizappwithfirebase.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
+import com.example.android_quizappwithfirebase.R;
 
 public class MainActivity extends AppCompatActivity {
     private CardView mathCardView,physicsCardView,englishCardView,biologycaCardView,// Tham chiếu đến CardView trong layout
@@ -72,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
         subjectActivity.putExtra("name", subjectName);
         // Khởi chạy SubjectActivity
         startActivity(subjectActivity);
+    }
+    protected void onStop() {
+        super.onStop();
+        // Kết thúc ứng dụng khi thoát khỏi Activity
+        finish();
     }
 
 }

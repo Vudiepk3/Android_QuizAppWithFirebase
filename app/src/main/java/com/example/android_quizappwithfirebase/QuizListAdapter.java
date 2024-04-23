@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.android_quizappwithfirebase.Activities.QuizActivity;
 import com.example.android_quizappwithfirebase.databinding.QuizItemRecyclerRowBinding;
 
 import java.util.List;

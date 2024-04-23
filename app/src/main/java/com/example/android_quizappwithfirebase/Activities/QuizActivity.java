@@ -1,5 +1,8 @@
-package com.example.android_quizappwithfirebase;
+package com.example.android_quizappwithfirebase.Activities;
 
+import static java.lang.String.*;
+
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -11,13 +14,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.android_quizappwithfirebase.QuestionModel;
 import com.example.android_quizappwithfirebase.R;
 import com.example.android_quizappwithfirebase.databinding.ActivityQuizBinding;
 import com.example.android_quizappwithfirebase.databinding.ScoreDialogBinding;
 
 import java.util.List;
-
-import com.example.android_quizappwithfirebase.QuestionModel;
 
 public class QuizActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -61,22 +63,24 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private void startTimer() {
         long totalTimeInMillis = Integer.parseInt(time) * 60 * 1000L;
         new CountDownTimer(totalTimeInMillis, 1000L) {
+            @SuppressLint("DefaultLocale")
             @Override
             public void onTick(long millisUntilFinished) {
                 long seconds = millisUntilFinished / 1000;
                 long minutes = seconds / 60;
                 long remainingSeconds = seconds % 60;
-                binding.timerIndicatorTextview.setText(String.format("%02d:%02d", minutes, remainingSeconds));
+                binding.timerIndicatorTextview.setText(format("%02d:%02d", minutes, remainingSeconds));
             }
 
             @Override
             public void onFinish() {
-                // Kết thúc bài kiểm tra
+                finishQuiz();
             }
         }.start();
     }
 
     // Phương thức này tải câu hỏi tiếp theo
+    @SuppressLint("SetTextI18n")
     private void loadQuestions() {
         selectedAnswer = "";
         if (currentQuestionIndex == questionModelList.size()) {
@@ -113,7 +117,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
                 if (selectedAnswer.equals(questionModelList.get(currentQuestionIndex).getCorrect())) {
                     // Nếu câu trả lời đúng, tăng điểm số
                     score++;
-                    Log.i("Score of quiz", String.valueOf(score));
+                    Log.i("Score of quiz", valueOf(score));
                 }
                 currentQuestionIndex++; // Chuyển sang câu hỏi tiếp theo
                 loadQuestions(); // Tải câu hỏi mới
@@ -138,10 +142,10 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             dialogBinding.scoreProgressText.setText(percentage + " %");
 
             if (percentage > 60) {
-                dialogBinding.scoreTitle.setText("Congrats! You have passed");
+                dialogBinding.scoreTitle.setText("Chúc mừng ban đã hoàn thành bài thi");
                 dialogBinding.scoreTitle.setTextColor(Color.BLUE);
             } else {
-                dialogBinding.scoreTitle.setText("Oops! You have failed");
+                dialogBinding.scoreTitle.setText("Chúc mừng ban đã hoàn thành bài thi");
                 dialogBinding.scoreTitle.setTextColor(Color.RED);
             }
             dialogBinding.scoreSubtitle.setText(score + " out of " + totalQuestions + " are correct");
@@ -154,5 +158,6 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         } catch (Exception e) {
             Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
         }
+
     }
 }
