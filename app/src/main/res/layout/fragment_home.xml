@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activities.MainActivity">
+
+        <LinearLayout
+            android:id="@+id/menu1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/blue_4"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="24sp"
+                android:text="Xin chào">
+
+            </TextView>
+
+        </LinearLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/constraintLayout"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="42dp"
+                            android:id="@+id/amazonName"
+                            android:text="@string/app_name"
+                            android:textSize="24sp"
+                            android:textColor="@color/blue"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="30dp"
+                            android:maxLines="2"
+                            android:fontFamily="@font/poppins_semibold"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/logoImage"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/amazonDesc"
+                            android:text="@string/sologan"
+                            android:textSize="14sp"
+                            android:layout_marginStart="18dp"
+                            android:textColor="@color/lavender"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/amazonName"
+                            app:layout_constraintEnd_toStartOf="@+id/logoImage"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginStart="5dp"
+                            app:cardElevation="20dp"
+                            app:cardCornerRadius="30dp"
+                            android:padding="10dp"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/logoImage"
+                            tools:ignore="MissingConstraints">
+                            <com.denzcoskun.imageslider.ImageSlider
+                                android:id="@+id/ImageSlide"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:iss_period="3000"
+                                app:iss_auto_cycle="true"
+                                app:iss_delay="2500"
+                                app:iss_corner_radius="16"
+                                app:iss_title_background="@mipmap/ic_logo"
+                                tools:ignore="MissingClass" />
+                        </androidx.cardview.widget.CardView>
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="120dp"
+                            android:id="@+id/logoImage"
+                            android:src="@mipmap/ic_logo"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginEnd="16dp"
+                            app:layout_constraintStart_toEndOf="@id/amazonName"
+                            android:contentDescription="@string/todo" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/row0"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="220dp"
+                            android:padding="0dp"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/logoImage">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/subjectText"
+                                android:text="Danh Sách Các Môn"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:textColor="@color/lavender"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:layout_margin="10dp"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="155dp"
+                            android:id="@+id/row1"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="0dp"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/row0">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:id="@+id/mathsCard"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                app:cardElevation="20dp"
+                                app:cardCornerRadius="20dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/mathsText"
+                                        android:text="@string/maths"
+                                        android:textSize="20sp"
+                                        android:textColor="@color/lavender"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_below="@+id/mathsImage"/>
+
+                                    <ImageView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:id="@+id/mathsImage"
+                                        android:src="@drawable/image_maths"
+                                        android:layout_marginTop="20dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:contentDescription="@string/todo" />
+
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                app:cardElevation="20dp"
+                                app:cardCornerRadius="20dp"
+                                android:id="@+id/physicsCard">
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/physicsName"
+                                        android:text="@string/physics"
+                                        android:textSize="20sp"
+                                        android:textColor="@color/lavender"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_below="@+id/physicsImage"/>
+
+                                    <ImageView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:id="@+id/physicsImage"
+                                        android:src="@drawable/image_physics"
+                                        android:layout_marginTop="20dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:contentDescription="@string/todo" />
+
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="155dp"
+                            android:id="@+id/row2"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="0dp"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/row1">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                app:cardElevation="20dp"
+                                app:cardCornerRadius="20dp"
+                                android:id="@+id/chemistryCard">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/chemistryText"
+                                        android:text="@string/chemistry"
+                                        android:textSize="20sp"
+                                        android:textColor="@color/lavender"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_below="@+id/chemistryImage"/>
+
+                                    <ImageView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:id="@+id/chemistryImage"
+                                        android:src="@drawable/image_chemistry"
+                                        android:layout_marginTop="20dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:contentDescription="@string/todo" />
+
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                app:cardElevation="20dp"
+                                app:cardCornerRadius="20dp"
+                                android:id="@+id/biologyCard">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/biologyText"
+                                        android:text="@string/biology"
+                                        android:textSize="20sp"
+                                        android:textColor="@color/lavender"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_below="@+id/biologyImage"/>
+
+                                    <ImageView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:id="@+id/biologyImage"
+                                        android:src="@drawable/image_biology"
+                                        android:layout_marginTop="20dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:contentDescription="@string/todo" />
+
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="155dp"
+                            android:id="@+id/row3"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="0dp"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/row2">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                app:cardElevation="20dp"
+                                app:cardCornerRadius="20dp"
+                                android:id="@+id/englishCard">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/englishText"
+                                        android:text="@string/english"
+                                        android:textSize="20sp"
+                                        android:textColor="@color/lavender"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_below="@+id/englishImage"/>
+
+                                    <ImageView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:id="@+id/englishImage"
+                                        android:src="@drawable/image_english"
+                                        android:layout_marginTop="20dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:contentDescription="@string/todo" />
+
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                app:cardElevation="20dp"
+                                app:cardCornerRadius="20dp"
+                                android:id="@+id/historyCard">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/historyText"
+                                        android:text="@string/history"
+                                        android:textSize="20sp"
+                                        android:textColor="@color/lavender"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_below="@+id/historyImage"/>
+
+                                    <ImageView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:id="@+id/historyImage"
+                                        android:src="@drawable/image_history"
+                                        android:layout_marginTop="20dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:contentDescription="@string/todo" />
+
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="155dp"
+                            android:id="@+id/row4"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="0dp"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/row3">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                app:cardElevation="20dp"
+                                app:cardCornerRadius="20dp"
+                                android:id="@+id/geographyCard">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/geographyText"
+                                        android:text="@string/geography"
+                                        android:textSize="20sp"
+                                        android:textColor="@color/lavender"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_below="@+id/geographyImage"/>
+
+                                    <ImageView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:id="@+id/geographyImage"
+                                        android:src="@drawable/image_geography"
+                                        android:layout_marginTop="20dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:contentDescription="@string/todo" />
+
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:layout_weight="1"
+                                app:cardElevation="20dp"
+                                app:cardCornerRadius="20dp"
+                                android:id="@+id/civicEducationCard">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:id="@+id/civicEducationText"
+                                        android:text="@string/civic"
+                                        android:textSize="16sp"
+                                        android:textColor="@color/lavender"
+                                        android:fontFamily="@font/poppins_semibold"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_below="@+id/civicEducationImage"/>
+
+                                    <ImageView
+                                        android:layout_width="55dp"
+                                        android:layout_height="55dp"
+                                        android:id="@+id/civicEducationImage"
+                                        android:src="@drawable/image_civiceducation"
+                                        android:layout_marginTop="20dp"
+                                        android:layout_centerHorizontal="true"
+                                        android:contentDescription="@string/todo"
+                                        tools:ignore="ContentDescription" />
+
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fragment_container">
+
+                    <!-- Content inside FrameLayout -->
+                </FrameLayout>
+            </LinearLayout>
+        </ScrollView>
+        <FrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>

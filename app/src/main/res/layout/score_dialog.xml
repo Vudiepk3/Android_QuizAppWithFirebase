@@ -51,6 +51,7 @@
         android:layout_height="wrap_content"
         android:text="Finish"
         android:layout_margin="8dp"
+        android:backgroundTint="@color/red"
         android:id="@+id/finish_btn"/>
 
 </LinearLayout>

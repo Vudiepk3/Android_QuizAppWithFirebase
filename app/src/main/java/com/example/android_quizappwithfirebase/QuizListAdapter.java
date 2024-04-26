@@ -73,7 +73,9 @@ public class QuizListAdapter extends RecyclerView.Adapter<QuizListAdapter.MyView
                 QuizActivity.setTime(model.getTime());
                 // Bắt đầu Activity mới
                 context.startActivity(intent);
+
             });
         }
     }
+
 }

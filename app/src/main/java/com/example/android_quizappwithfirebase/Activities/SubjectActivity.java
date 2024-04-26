@@ -43,6 +43,7 @@ public class SubjectActivity extends AppCompatActivity {
 
         // Lấy dữ liệu từ Firebase
         getDataFromFirebase();
+        onResume();
     }
 
     // Thiết lập RecyclerView
@@ -108,5 +109,7 @@ public class SubjectActivity extends AppCompatActivity {
                 return 0; // Trả về giá trị mặc định nếu không khớp với bất kỳ môn học nào
         }
     }
-
+    protected  void onResume(){
+        super.onResume();
+    }
 }
