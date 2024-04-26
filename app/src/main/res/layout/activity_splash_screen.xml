@@ -16,5 +16,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_logo"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="ContentDescription,MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,7 +20,8 @@
             android:src="@mipmap/ic_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/titleName"
@@ -33,7 +34,8 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/profileImg"
             app:layout_constraintStart_toStartOf="@id/profileImg"
-            app:layout_constraintTop_toBottomOf="@id/profileImg" />
+            app:layout_constraintTop_toBottomOf="@id/profileImg"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/titleUsername"
@@ -44,7 +46,8 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@id/titleName"
             app:layout_constraintStart_toStartOf="@id/titleName"
-            app:layout_constraintTop_toBottomOf="@id/titleName" />
+            app:layout_constraintTop_toBottomOf="@id/titleName"
+            tools:ignore="HardcodedText" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -63,7 +66,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                tools:ignore="DisableBaselineAlignment">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -83,7 +87,8 @@
                         android:textAlignment="center"
                         android:textColor="@color/lavender"
                         android:textSize="26sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:id="@+id/posts"
@@ -92,7 +97,8 @@
                         android:text="Posts"
                         android:textAlignment="center"
                         android:textColor="@color/lavender"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
 
                 </LinearLayout>
 
@@ -114,7 +120,8 @@
                         android:textAlignment="center"
                         android:textColor="@color/lavender"
                         android:textSize="26sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:id="@+id/followers"
@@ -123,7 +130,8 @@
                         android:text="Followers"
                         android:textAlignment="center"
                         android:textColor="@color/lavender"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
 
                 </LinearLayout>
 
@@ -145,7 +153,8 @@
                         android:textAlignment="center"
                         android:textColor="@color/lavender"
                         android:textSize="26sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:id="@+id/following"
@@ -154,7 +163,8 @@
                         android:text="Following"
                         android:textAlignment="center"
                         android:textColor="@color/lavender"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        tools:ignore="HardcodedText" />
 
                 </LinearLayout>
 
@@ -175,7 +185,8 @@
                     android:text="Biet Danh"
                     android:textColor="@color/lavender"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/profileName"
@@ -185,7 +196,8 @@
                     android:text="name"
                     android:textAlignment="viewEnd"
                     android:textColor="@color/grey"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 
@@ -210,7 +222,8 @@
                     android:text="Họ Và Tên"
                     android:textColor="@color/lavender"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/profileEmail"
@@ -220,7 +233,8 @@
                     android:text="email"
                     android:textAlignment="viewEnd"
                     android:textColor="@color/grey"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 
@@ -245,7 +259,8 @@
                     android:text="Username"
                     android:textColor="@color/lavender"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/profileUsername"
@@ -255,7 +270,8 @@
                     android:text="username"
                     android:textAlignment="viewEnd"
                     android:textColor="@color/grey"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText" />
 
             </LinearLayout>
 
@@ -280,7 +296,8 @@
                     android:text="Password"
                     android:textColor="@color/lavender"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
 
                 <TextView
                     android:id="@+id/profilePassword"
@@ -291,7 +308,8 @@
                     android:text="password"
                     android:textAlignment="viewEnd"
                     android:textColor="@color/grey"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    tools:ignore="HardcodedText,TextViewEdits" />
 
             </LinearLayout>
 
@@ -310,7 +328,8 @@
             app:cornerRadius="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/linearLayout" />
+            app:layout_constraintTop_toBottomOf="@id/linearLayout"
+            tools:ignore="HardcodedText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -320,5 +339,6 @@
         android:text="Thêm"
         android:gravity="center"
         android:textSize="30sp"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        tools:ignore="HardcodedText" />
 </FrameLayout>

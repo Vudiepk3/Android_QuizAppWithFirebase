@@ -141,7 +141,8 @@
                     android:text="Kết Thúc"
                     android:paddingVertical="12dp"
                     android:textSize="14sp"
-                    android:backgroundTint="@color/red" />
+                    android:backgroundTint="@color/red"
+                    tools:ignore="ButtonStyle,HardcodedText" />
 
                 <Button
                     android:id="@+id/next_btn"
@@ -152,7 +153,8 @@
                     android:text="Tiếp Theo"
                     android:paddingVertical="12dp"
                     android:textSize="14sp"
-                    android:backgroundTint="@color/red" />
+                    android:backgroundTint="@color/red"
+                    tools:ignore="ButtonStyle,HardcodedText" />
 
             </LinearLayout>
 

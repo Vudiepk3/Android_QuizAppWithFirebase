@@ -27,7 +27,8 @@
                 android:textColor="@color/blue_4"
                 android:fontFamily="@font/poppins_semibold"
                 android:textSize="24sp"
-                android:text="Xin chào">
+                android:text="Xin chào"
+                tools:ignore="HardcodedText">
 
             </TextView>
 
@@ -142,7 +143,8 @@
                                 android:textSize="20sp"
                                 android:textColor="@color/lavender"
                                 android:fontFamily="@font/poppins_semibold"
-                                android:layout_margin="10dp"/>
+                                android:layout_margin="10dp"
+                                tools:ignore="HardcodedText" />
 
                         </LinearLayout>
 
@@ -180,7 +182,8 @@
                                         android:fontFamily="@font/poppins_semibold"
                                         android:layout_marginTop="10dp"
                                         android:layout_centerHorizontal="true"
-                                        android:layout_below="@+id/mathsImage"/>
+                                        android:layout_below="@+id/mathsImage"
+                                        tools:ignore="TooDeepLayout" />
 
                                     <ImageView
                                         android:layout_width="55dp"
