@@ -34,7 +34,7 @@ public class SubjectActivity extends AppCompatActivity {
         Intent intent = this.getIntent();
         if (intent != null){
             String name = intent.getStringExtra("name");
-            int image = intent.getIntExtra("image", R.mipmap.ic_logo);
+            int image = intent.getIntExtra("image", R.drawable.image_logo);
             binding.ImageSlide.setImageResource(image);
             binding.subjectName.setText(name);
         }

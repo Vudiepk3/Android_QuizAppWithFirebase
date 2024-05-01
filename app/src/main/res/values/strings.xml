@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Ôn Tập Kỳ Thi\n THPTQG</string>
+    <string name="app_name">Lớp 12</string>
     <string name="maths">Toán Học</string>
+    <string name="literature">Văn Học</string>
     <string name="english">Tiếng Anh</string>
     <string name="physics">Vật Lý   </string>
     <string name="chemistry">Hoá Học</string>

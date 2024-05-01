@@ -14,6 +14,7 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.android_quizappwithfirebase.Activities.SubjectActivity;
+
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
@@ -25,6 +26,7 @@ public class HomeFragment extends Fragment {
     private final ArrayList<CardView> cardViews = new ArrayList<>();
     private final String[] subjectNames = {
             "Toán Học",
+            "Văn Học",
             "Vật Lý",
             "Hoá Học",
             "Tiếng Anh",
@@ -35,6 +37,7 @@ public class HomeFragment extends Fragment {
     };
     private final int[] imageResIds = {
             R.drawable.image_maths,
+            R.drawable.image_literature,
             R.drawable.image_physics,
             R.drawable.image_chemistry,
             R.drawable.image_english,

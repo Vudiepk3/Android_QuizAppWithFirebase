@@ -31,7 +31,7 @@
                     android:id="@+id/txtName"
                     android:textStyle="bold"
                     android:textSize="19sp"
-                    android:text="Tên khách hàng"
+                    android:text="Tên trường đại học"
                     android:layout_weight="3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

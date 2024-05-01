@@ -17,7 +17,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="30dp"
-            android:src="@mipmap/ic_logo"
+            android:src="@drawable/image_logo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -333,12 +333,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Thêm"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="@color/white"
-        tools:ignore="HardcodedText" />
 </FrameLayout>

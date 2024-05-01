@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.android_quizappwithfirebase.QuestionModel;
 import com.example.android_quizappwithfirebase.R;
 import com.example.android_quizappwithfirebase.databinding.ActivityQuizBinding;
-import com.example.android_quizappwithfirebase.databinding.ScoreDialogBinding;
+import com.example.android_quizappwithfirebase.databinding.ItemScoreDialogBinding;
 
 import java.util.List;
 
@@ -143,22 +143,11 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
             int percentage = (int) (((float) score / totalQuestions) * 100);
 
             // Tạo hộp thoại hiển thị kết quả
-            ScoreDialogBinding dialogBinding = ScoreDialogBinding.inflate(getLayoutInflater());
+            ItemScoreDialogBinding dialogBinding = ItemScoreDialogBinding.inflate(getLayoutInflater());
             dialogBinding.scoreProgressIndicator.setProgress(percentage);
             dialogBinding.scoreProgressText.setText(percentage + " %");
-            if (percentage == 100) {
-                dialogBinding.scoreTitle.setText("Chúc mừng ban đã hoàn thành xuất sắc bài thi");
-                dialogBinding.scoreTitle.setTextColor(Color.BLUE);
-            }else if (percentage >= 80 && percentage < 100) {
-                dialogBinding.scoreTitle.setText("Chúc mừng ban đã hoàn thành tốt bài thi");
-                dialogBinding.scoreTitle.setTextColor(Color.BLUE);
-            }else if (percentage > 10 && percentage < 80 ) {
-                    dialogBinding.scoreTitle.setText("Chúc mừng ban đã hoàn thành bài thi");
-                    dialogBinding.scoreTitle.setTextColor(Color.BLUE);
-            } else {
-                dialogBinding.scoreTitle.setText("Chúc mừng ban đã hoàn thành bài thi");
-                dialogBinding.scoreTitle.setTextColor(Color.RED);
-            }
+            dialogBinding.scoreTitle.setText("Chúc mừng ban đã hoàn thành bài thi");
+            dialogBinding.scoreTitle.setTextColor(Color.RED);
             dialogBinding.scoreSubtitle.setText(score + " trên " + totalQuestions + " chính xác");
             dialogBinding.finishBtn.setOnClickListener(v -> finish()); // Đóng activity khi nút "Finish" được nhấn
 
