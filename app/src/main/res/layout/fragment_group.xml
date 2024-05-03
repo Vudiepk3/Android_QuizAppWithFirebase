@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/image_profile"
+    android:layout_marginBottom="60dp"
+    tools:context=".Fragment.GroupFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/groupText"
+            android:textAlignment="center"
+            android:text="Nhóm Học Tập"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText"/>
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchPerson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/white_background"
+            app:queryHint="Tìm Kiếm ..."/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            tools:ignore="UselessParent"
+            android:divider="@android:color/transparent"
+            app:layout_constraintTop_toBottomOf="@id/groupText"
+            android:dividerHeight="10.0sp">
+
+            <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/listview"
+                    android:scrollbars="vertical"
+                    tools:listitem="@layout/list_item"
+                    tools:ignore="NestedScrolling" />
+
+         </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

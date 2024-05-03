@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gray"
-    tools:context=".CivicEducationFragment">
+    android:background="@drawable/image_profile"
+    tools:context=".Fragment.CivicEducationFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -27,6 +27,7 @@
                 android:text="Thông Tin Tuyển Sinh"
                 android:textSize="30sp"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:fontFamily="@font/poppins_semibold"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
@@ -47,6 +48,8 @@
                     android:id="@+id/rcvPerson"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     tools:listitem="@layout/quiz_item_universities"/>
             </ScrollView>
             <FrameLayout

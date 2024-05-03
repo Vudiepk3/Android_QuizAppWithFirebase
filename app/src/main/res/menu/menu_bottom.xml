@@ -11,9 +11,12 @@
         android:title=""
         android:icon="@drawable/baseline_collegeentrance" />
     <item
-        android:id="@+id/person"
+        android:id="@+id/group"
         android:title=""
-        android:icon="@drawable/baseline_person" />
-
+        android:icon="@drawable/baseline_groups" />
+    <item
+        android:id="@+id/chatgpt"
+        android:title=""
+        android:icon="@drawable/baseline_chat_gpt" />
 
 </menu>

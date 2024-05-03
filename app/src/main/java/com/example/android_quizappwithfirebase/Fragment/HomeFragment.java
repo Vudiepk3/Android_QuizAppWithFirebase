@@ -1,4 +1,4 @@
-package com.example.android_quizappwithfirebase;
+package com.example.android_quizappwithfirebase.Fragment;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -14,6 +14,7 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.android_quizappwithfirebase.Activities.SubjectActivity;
+import com.example.android_quizappwithfirebase.R;
 
 import java.util.ArrayList;
 
