@@ -14,14 +14,14 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 public class GroupAdapter extends ArrayAdapter<GroupData> {
     public GroupAdapter(@NonNull Context context, ArrayList<GroupData> dataArrayList) {
-        super(context, R.layout.list_item, dataArrayList);
+        super(context, R.layout.item_subjects, dataArrayList);
     }
     @NonNull
     @Override
     public View getView(int position, @Nullable View view, @NonNull ViewGroup parent) {
         GroupData listData = getItem(position);
         if (view == null){
-            view = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+            view = LayoutInflater.from(getContext()).inflate(R.layout.item_subjects, parent, false);
         }
         ImageView listImage = view.findViewById(R.id.listImage);
         TextView listName = view.findViewById(R.id.listName);

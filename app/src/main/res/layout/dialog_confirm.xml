@@ -19,14 +19,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="20dp">
 
-        <ImageButton
-            android:id="@+id/imgCancel"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="right|top"
-            android:background="@android:color/transparent"
-            android:src="@drawable/baseline_close" />
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,7 +27,8 @@
             android:text="Thông báo"
             android:textColor="@color/black"
             android:textSize="28sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -43,15 +36,36 @@
             android:textAlignment="center"
             android:hint="Bạn có chắc chắn muốn đăng xuất\nkhỏi tài khản này không ?"
             android:textColor="@color/black"
-            android:textSize="15sp" />
-
-        <Button
-            android:id="@+id/btnLogout"
+            android:textSize="15sp"
+            tools:ignore="HardcodedText" />
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:weightSum="5"
             android:layout_marginTop="20dp"
-            android:text="Đăng xuất"
-            app:backgroundTint="#EC2E2E" />
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnYes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginEnd="5dp"
+                app:backgroundTint="@color/blue_1"
+                android:textColor="@color/black"
+                android:text="Có"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btnNo"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                app:backgroundTint="#EC2E2E"
+                android:text="Không"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -60,8 +74,10 @@
         android:layout_height="60dp"
         android:elevation="10dp"
         android:padding="15dp"
+        android:background="@drawable/image_logo"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
         app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

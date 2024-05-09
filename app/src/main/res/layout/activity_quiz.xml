@@ -23,7 +23,7 @@
         <ImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:src="@drawable/icon_timer"
+            android:src="@drawable/icon_timer_24px"
             app:tint="@color/blue"
             android:layout_marginEnd="4dp"
             android:layout_toStartOf="@id/timer_indicator_textview"

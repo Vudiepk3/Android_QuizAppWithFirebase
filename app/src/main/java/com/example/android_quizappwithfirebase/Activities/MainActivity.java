@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.android_quizappwithfirebase.Fragment.ChatGPTFragment;
 import com.example.android_quizappwithfirebase.Fragment.CivicEducationFragment;
 import com.example.android_quizappwithfirebase.Fragment.GroupFragment;
 import com.example.android_quizappwithfirebase.Fragment.HomeFragment;
@@ -33,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragment(new CivicEducationFragment());
             } else if (item.getItemId() == R.id.group) {
                 replaceFragment(new GroupFragment());
-            } else if (item.getItemId() == R.id.chatgpt) {
-                replaceFragment(new ChatGPTFragment());
             }
             return true;
         });

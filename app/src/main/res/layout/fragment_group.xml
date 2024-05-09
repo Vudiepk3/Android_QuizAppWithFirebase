@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="@drawable/white_background"
+            android:background="@drawable/baseline_button_background"
             app:queryHint="Tìm Kiếm ..."/>
 
         <LinearLayout
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/listview"
                     android:scrollbars="vertical"
-                    tools:listitem="@layout/list_item"
+                    tools:listitem="@layout/item_subjects"
                     tools:ignore="NestedScrolling" />
 
          </LinearLayout>

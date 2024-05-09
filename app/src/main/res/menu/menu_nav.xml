@@ -5,29 +5,27 @@
     <group android:id="@+id/group1">
         <item
             android:id="@+id/nav_about"
-            android:icon="@drawable/baseline_person"
-            android:title="Thay đổi thông tin cá nhân" />
+            android:icon="@drawable/icon_person_24px"
+            android:title="Thay đổi thông tin cá nhân"
+            tools:ignore="HardcodedText"/>
 
         <item
             android:id="@+id/nav_share"
-            android:icon="@drawable/baseline_share"
-            android:title="Chia sẻ ứng dụng" />
+            android:icon="@drawable/icon_share_24px"
+            android:title="Chia sẻ ứng dụng"
+            tools:ignore="HardcodedText" />
 
         <item
             android:id="@+id/nav_evaluate"
-            android:icon="@drawable/baseline_vote"
-            android:title="Xếp hạng ứng dụng" />
+            android:icon="@drawable/icon_vote_24px"
+            android:title="Xếp hạng ứng dụng"
+            tools:ignore="HardcodedText"/>
 
         <item
             android:id="@+id/nav_feedback"
-            android:icon="@drawable/baseline_feedback"
-            android:title="Góp ý" />
+            android:icon="@drawable/icon_feedback_24px"
+            android:title="Góp ý"
+            tools:ignore="HardcodedText"/>
     </group>
-    <group android:id="@+id/group2">
-        <item
-            android:id="@+id/nav_logout"
-            android:icon="@drawable/baseline_logout"
-            android:title="Đăng xuất"
-            android:orderInCategory="100" /> <!-- Thêm orderInCategory -->
-    </group>
+
 </menu>

@@ -44,7 +44,7 @@
             <ImageView
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:src="@drawable/icon_timer"
+                android:src="@drawable/icon_timer_24px"
                 app:tint="@color/orange"
                 tools:ignore="ContentDescription" />
             <TextView

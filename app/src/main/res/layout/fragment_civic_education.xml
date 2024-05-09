@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="@drawable/white_background"
+                android:background="@drawable/baseline_button_background"
                 app:queryHint="Tìm Kiếm ..."/>
             <ScrollView
                 android:layout_width="match_parent"
@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    tools:listitem="@layout/quiz_item_universities"/>
+                    tools:listitem="@layout/item_universities"/>
             </ScrollView>
             <FrameLayout
                 android:id="@+id/frame_layout"
