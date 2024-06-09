@@ -1,4 +1,4 @@
-package com.example.android_quizappwithfirebase.Activities;
+package com.example.android_quizappwithfirebase.activities;
 
 import static java.lang.String.format;
 import static java.lang.String.valueOf;
@@ -16,7 +16,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.android_quizappwithfirebase.QuestionModel;
+import com.example.android_quizappwithfirebase.model.QuestionModel;
 import com.example.android_quizappwithfirebase.R;
 import com.example.android_quizappwithfirebase.databinding.ActivityQuizBinding;
 import com.example.android_quizappwithfirebase.databinding.ItemScoreDialogBinding;

@@ -1,4 +1,4 @@
-package com.example.android_quizappwithfirebase;
+package com.example.android_quizappwithfirebase.model;
 
 import java.util.ArrayList;
 import java.util.List;

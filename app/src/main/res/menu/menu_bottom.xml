@@ -7,7 +7,7 @@
         android:title=""
         android:icon="@drawable/icon_home_24px"/>
     <item
-        android:id="@+id/entrance"
+        android:id="@+id/university"
         android:title=""
         android:icon="@drawable/icon_collegeentrance_24px" />
     <item

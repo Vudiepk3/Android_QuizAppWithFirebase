@@ -11,23 +11,26 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.android_quizappwithfirebase.model.GroupModel;
+
 import java.util.ArrayList;
-public class GroupAdapter extends ArrayAdapter<GroupData> {
-    public GroupAdapter(@NonNull Context context, ArrayList<GroupData> dataArrayList) {
+import com.example.android_quizappwithfirebase.model.GroupModel;
+public class GroupAdapter extends ArrayAdapter<GroupModel> {
+    public GroupAdapter(@NonNull Context context, ArrayList<GroupModel> dataArrayList) {
         super(context, R.layout.item_subjects, dataArrayList);
     }
     @NonNull
     @Override
     public View getView(int position, @Nullable View view, @NonNull ViewGroup parent) {
-        GroupData listData = getItem(position);
+        GroupModel listData = getItem(position);
         if (view == null){
             view = LayoutInflater.from(getContext()).inflate(R.layout.item_subjects, parent, false);
         }
         ImageView listImage = view.findViewById(R.id.listImage);
         TextView listName = view.findViewById(R.id.listName);
         assert listData != null;
-        listImage.setImageResource(listData.image);
-        listName.setText(listData.name);
+        listImage.setImageResource(listData.getImage());
+        listName.setText(listData.getName());
         return view;
     }
 }

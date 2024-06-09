@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/image_profile"
-    android:layout_marginBottom="60dp"
-    tools:context=".Fragment.GroupFragment">
+    tools:context=".fragment.GroupFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -50,14 +49,14 @@
             android:dividerHeight="10.0sp">
 
             <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/listview"
-                    android:scrollbars="vertical"
-                    tools:listitem="@layout/item_subjects"
-                    tools:ignore="NestedScrolling" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/listview"
+                android:scrollbars="vertical"
+                tools:listitem="@layout/item_subjects"
+                tools:ignore="NestedScrolling" />
 
-         </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
 </FrameLayout>

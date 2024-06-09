@@ -1,4 +1,4 @@
-package com.example.android_quizappwithfirebase.Fragment;
+package com.example.android_quizappwithfirebase.fragment;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
-import com.example.android_quizappwithfirebase.Activities.SubjectActivity;
+import com.example.android_quizappwithfirebase.activities.SubjectActivity;
 import com.example.android_quizappwithfirebase.R;
 
 import java.util.ArrayList;
@@ -28,9 +28,9 @@ public class HomeFragment extends Fragment {
     private final String[] subjectNames = {
             "Toán Học",
             "Văn Học",
+            "Tiếng Anh",
             "Vật Lý",
             "Hoá Học",
-            "Tiếng Anh",
             "Sinh Học",
             "Lịch Sử",
             "Địa Lý",
@@ -39,9 +39,9 @@ public class HomeFragment extends Fragment {
     private final int[] imageResIds = {
             R.drawable.image_maths,
             R.drawable.image_literature,
+            R.drawable.image_english,
             R.drawable.image_physics,
             R.drawable.image_chemistry,
-            R.drawable.image_english,
             R.drawable.image_biology,
             R.drawable.image_history,
             R.drawable.image_geography,
@@ -87,7 +87,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void initializeViews(View view) {
-        for (int id : new int[]{R.id.mathsCard, R.id.physicsCard, R.id.chemistryCard, R.id.englishCard,
+        for (int id : new int[]{R.id.mathsCard,R.id.literatureCard, R.id.englishCard, R.id.physicsCard, R.id.chemistryCard,
                 R.id.biologyCard, R.id.historyCard, R.id.geographyCard, R.id.civicEducationCard}) {
             cardViews.add(view.findViewById(id));
         }

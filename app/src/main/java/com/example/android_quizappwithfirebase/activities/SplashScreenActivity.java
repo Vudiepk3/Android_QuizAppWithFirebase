@@ -1,4 +1,4 @@
-package com.example.android_quizappwithfirebase.Activities;
+package com.example.android_quizappwithfirebase.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;

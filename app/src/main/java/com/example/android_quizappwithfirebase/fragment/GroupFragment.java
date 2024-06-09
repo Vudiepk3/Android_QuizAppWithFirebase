@@ -1,4 +1,4 @@
-package com.example.android_quizappwithfirebase.Fragment;
+package com.example.android_quizappwithfirebase.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.android_quizappwithfirebase.GroupAdapter;
-import com.example.android_quizappwithfirebase.GroupData;
+import com.example.android_quizappwithfirebase.model.GroupModel;
 import com.example.android_quizappwithfirebase.R;
 import com.example.android_quizappwithfirebase.databinding.FragmentGroupBinding;
 
@@ -19,8 +19,8 @@ public class GroupFragment extends Fragment {
 
     FragmentGroupBinding binding;
     GroupAdapter listAdapter;
-    ArrayList<GroupData> dataArrayList = new ArrayList<>();
-    GroupData listData;
+    ArrayList<GroupModel> dataArrayList = new ArrayList<>();
+    GroupModel listData;
 
 
     public GroupFragment() {
@@ -49,12 +49,10 @@ public class GroupFragment extends Fragment {
                         "Lịch Sử", "Địa Lý", "Giáo Dục Công Dân"};
 
         for (int i = 0; i < imageList.length; i++){
-            listData = new GroupData(groupNames[i],imageList[i]);
+            listData = new GroupModel(groupNames[i],imageList[i]);
             dataArrayList.add(listData);
         }
-        listAdapter = new GroupAdapter(getActivity(), dataArrayList);
-        binding.listview.setAdapter(listAdapter);
-        binding.listview.setClickable(true);
+        listAdapter = new GroupAdapter(requireActivity(), dataArrayList);
 
         return view; // Trả về view đã inflate
     }

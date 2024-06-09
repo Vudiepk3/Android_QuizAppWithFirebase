@@ -1,4 +1,4 @@
-package com.example.android_quizappwithfirebase.Activities;
+package com.example.android_quizappwithfirebase.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.android_quizappwithfirebase.QuizListAdapter;
-import com.example.android_quizappwithfirebase.QuizModel;
+import com.example.android_quizappwithfirebase.model.QuizModel;
 import com.example.android_quizappwithfirebase.R;
 import com.example.android_quizappwithfirebase.databinding.ActivitySubjectBinding;
 import com.google.firebase.database.DataSnapshot;
@@ -91,20 +91,22 @@ public class SubjectActivity extends AppCompatActivity {
         switch (subjectName) {
             case "Toán Học":
                 return 1;
-            case "Vật Lý":
+            case "Văn Học":
                 return 2;
-            case "Hoá Học":
-                return 3;
-            case "Sinh Học":
-                return 4;
             case "Tiếng Anh":
+                return 3;
+            case "Vật Lý":
+                return 4;
+            case "Hoá Học":
                 return 5;
-            case "Lịch Sử":
+            case "Sinh Học":
                 return 6;
-            case "Địa Lý":
+            case "Lịch Sử":
                 return 7;
-            case "Giáo Dục Công Dân":
+            case "Địa Lý":
                 return 8;
+            case "Giáo Dục Công Dân":
+                return 9;
             default:
                 return 0; // Trả về giá trị mặc định nếu không khớp với bất kỳ môn học nào
         }
