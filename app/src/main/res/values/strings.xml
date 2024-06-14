@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lớp 12</string>
+    <string name="app_name">QuizAppWithFireBase</string>
     <string name="maths">Toán Học</string>
     <string name="literature">Văn Học</string>
     <string name="english">Tiếng Anh</string>

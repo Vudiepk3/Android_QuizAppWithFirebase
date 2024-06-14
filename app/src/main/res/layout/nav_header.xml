@@ -5,23 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="176dp"
     android:gravity="bottom"
-    android:padding="35dp"
-    android:background="@drawable/baseline_header"
+    android:padding="16dp"
+    android:background="@drawable/image_background"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:background="@drawable/baseline_circular"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/image_logo"/>
 
     <TextView
-        android:id="@+id/txtUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Vũ Xuân Điệp"
-        android:textSize="16sp"
+        android:text="Android Knowledge"
         android:textColor="@color/white"
         android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="contact@androidknowledge.com"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:layout_marginBottom="16dp"/>
+
 </LinearLayout>

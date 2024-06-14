@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
-    <group android:id="@+id/group1">
-        <item
-            android:id="@+id/nav_about"
-            android:icon="@drawable/icon_person_24px"
-            android:title="Thay đổi thông tin cá nhân"
-            tools:ignore="HardcodedText"/>
+    tools:showIn = "navigation_view">
+
+    <group
+        android:checkableBehavior="single">
 
         <item
-            android:id="@+id/nav_share"
-            android:icon="@drawable/icon_share_24px"
-            android:title="Chia sẻ ứng dụng"
-            tools:ignore="HardcodedText" />
-
-        <item
-            android:id="@+id/nav_evaluate"
-            android:icon="@drawable/icon_vote_24px"
-            android:title="Xếp hạng ứng dụng"
-            tools:ignore="HardcodedText"/>
+            android:id="@+id/nav_home"
+            android:icon="@drawable/icon_home_24px"
+            android:title="Home"/>
 
         <item
             android:id="@+id/nav_feedback"
             android:icon="@drawable/icon_feedback_24px"
-            android:title="Góp ý"
-            tools:ignore="HardcodedText"/>
+            android:title="FeedBack"/>
+
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/icon_share_24px"
+            android:title="Share"/>
+
+        <item
+            android:id="@+id/nav_vote"
+            android:icon="@drawable/icon_vote_24px"
+            android:title="Vote"/>
     </group>
+
 
 </menu>
