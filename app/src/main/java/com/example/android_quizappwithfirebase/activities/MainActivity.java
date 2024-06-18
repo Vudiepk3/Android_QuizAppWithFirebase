@@ -36,6 +36,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             "Địa Lý",
             "Giáo Dục Công Dân"
     };
+    private final int[] cardViewIds = {
+            R.id.mathsCard,
+            R.id.literatureCard,
+            R.id.englishCard,
+            R.id.physicsCard,
+            R.id.chemistryCard,
+            R.id.biologyCard,
+            R.id.historyCard,
+            R.id.geographyCard,
+            R.id.civicEducationCard
+    };
+
     private final int[] imageResIds = {
             R.drawable.image_maths,
             R.drawable.image_literature,
@@ -81,18 +93,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
     }
+    
 
-    private final int[] cardViewIds = {
-            R.id.mathsCard,
-            R.id.literatureCard,
-            R.id.englishCard,
-            R.id.physicsCard,
-            R.id.chemistryCard,
-            R.id.biologyCard,
-            R.id.historyCard,
-            R.id.geographyCard,
-            R.id.civicEducationCard
-    };
 
     private void loadQuiz() {
         for (int i = 0; i < cardViewIds.length; i++) {

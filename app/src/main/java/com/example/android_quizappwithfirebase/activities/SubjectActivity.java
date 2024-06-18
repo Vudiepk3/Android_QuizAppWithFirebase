@@ -16,12 +16,25 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class SubjectActivity extends AppCompatActivity {
     private ActivitySubjectBinding binding;
     private List<QuizModel> quizModelList;
+    private static final HashMap<String, Integer> SUBJECT_IDS = new HashMap<>();
 
+    static {
+        SUBJECT_IDS.put("Toán Học", 1);
+        SUBJECT_IDS.put("Văn Học", 2);
+        SUBJECT_IDS.put("Tiếng Anh", 3);
+        SUBJECT_IDS.put("Vật Lý", 4);
+        SUBJECT_IDS.put("Hoá Học", 5);
+        SUBJECT_IDS.put("Sinh Học", 6);
+        SUBJECT_IDS.put("Lịch Sử", 7);
+        SUBJECT_IDS.put("Địa Lý", 8);
+        SUBJECT_IDS.put("Giáo Dục Công Dân", 9);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,29 +100,8 @@ public class SubjectActivity extends AppCompatActivity {
             // Xử lý khi có lỗi xảy ra trong quá trình lấy dữ liệu
         });
     }
-    public int getSubjectId(String subjectName) {
-        switch (subjectName) {
-            case "Toán Học":
-                return 1;
-            case "Văn Học":
-                return 2;
-            case "Tiếng Anh":
-                return 3;
-            case "Vật Lý":
-                return 4;
-            case "Hoá Học":
-                return 5;
-            case "Sinh Học":
-                return 6;
-            case "Lịch Sử":
-                return 7;
-            case "Địa Lý":
-                return 8;
-            case "Giáo Dục Công Dân":
-                return 9;
-            default:
-                return 0; // Trả về giá trị mặc định nếu không khớp với bất kỳ môn học nào
-        }
+    public static int getSubjectId(String subjectName) {
+        return SUBJECT_IDS.getOrDefault(subjectName, 0);
     }
     protected  void onResume(){
         super.onResume();
