@@ -25,7 +25,7 @@ import java.util.List;
 
 public class QuizActivity extends AppCompatActivity implements View.OnClickListener {
 
-    // Danh sách câu hỏi và thời gian bài kiểm tra
+    // List of questions and the quiz time
     private static List<QuestionModel> questionModelList;
     private static String time;
     private ActivityQuizBinding binding;
@@ -33,11 +33,12 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     private String selectedAnswer = "";
     private int score = 0;
 
-    // Phương thức này sẽ được gọi từ bên ngoài để thiết lập danh sách các câu hỏi
+    // This method is called from outside to set the list of questions
     public static void setQuestionModelList(List<QuestionModel> questionList) {
         questionModelList = questionList;
     }
-    // Phương thức này sẽ được gọi từ bên ngoài để thiết lập thời gian cho bài kiểm tra
+
+    // This method is called from outside to set the quiz time
     public static void setTime(String time) {
         QuizActivity.time = time;
     }
@@ -46,10 +47,9 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityQuizBinding.inflate(getLayoutInflater());
-
         setContentView(binding.getRoot());
 
-        // Thiết lập sự kiện lắng nghe cho các nút và bắt đầu bài kiểm tra
+        // Set click listeners for buttons and start the quiz
         binding.btn0.setOnClickListener(this);
         binding.btn1.setOnClickListener(this);
         binding.btn2.setOnClickListener(this);
@@ -57,12 +57,11 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
         binding.nextBtn.setOnClickListener(this);
         binding.endBtn.setOnClickListener(this);
 
-        loadQuestions(); // Tải câu hỏi
-        startTimer(); // Bắt đầu đếm thời gian
-
+        loadQuestions(); // Load questions
+        startTimer(); // Start the timer
     }
 
-    // Phương thức này khởi động đồng hồ đếm thời gian
+    // This method starts the countdown timer
     private void startTimer() {
         long totalTimeInMillis = Integer.parseInt(time) * 60 * 1000L;
         new CountDownTimer(totalTimeInMillis, 1000L) {
@@ -77,20 +76,20 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onFinish() {
-                finishQuiz();
+                finishQuiz(); // End the quiz when the time is up
             }
         }.start();
     }
 
-    // Phương thức này tải câu hỏi tiếp theo
+    // This method loads the next question
     @SuppressLint("SetTextI18n")
     private void loadQuestions() {
-        selectedAnswer = "";
+        selectedAnswer = ""; // Reset the selected answer
         if (currentQuestionIndex == questionModelList.size()) {
-            finishQuiz(); // Kết thúc bài kiểm tra nếu đã trả lời hết câu hỏi
+            finishQuiz(); // End the quiz if all questions are answered
             return;
         }
-        // Hiển thị câu hỏi và các tùy chọn
+        // Display the question and options
         binding.questionIndicatorTextview.setText("Question " + (currentQuestionIndex + 1) + "/ " + questionModelList.size());
         binding.questionProgressIndicator.setProgress((int) ((currentQuestionIndex / (float) questionModelList.size()) * 100));
         binding.questionTextview.setText(questionModelList.get(currentQuestionIndex).getQuestion());
@@ -103,7 +102,7 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        // Đặt màu nền cho tất cả các nút thành màu xám
+        // Set the background color of all buttons to gray
         binding.btn0.setBackgroundColor(getColor(R.color.gray));
         binding.btn1.setBackgroundColor(getColor(R.color.gray));
         binding.btn2.setBackgroundColor(getColor(R.color.gray));
@@ -111,82 +110,72 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         try {
             if (view.getId() == R.id.next_btn) {
-                // Nếu nút "Next" được nhấn
+                // If the "Next" button is clicked
                 if (selectedAnswer.isEmpty()) {
-                    // Kiểm tra xem người dùng đã chọn câu trả lời chưa
-                    Toast.makeText(getApplicationContext(), "Làm Ơn Chọn Đáp Án Để Tiếp Tục", Toast.LENGTH_SHORT).show();
+                    // Check if the user has selected an answer
+                    Toast.makeText(getApplicationContext(), "Please select an answer to continue", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (selectedAnswer.equals(questionModelList.get(currentQuestionIndex).getCorrect())) {
-                    // Nếu câu trả lời đúng, tăng điểm số
+                    // If the answer is correct, increase the score
                     score++;
-                    Log.i("Điểm của bài kiểm tra", valueOf(score));
+                    Log.i("Quiz Score", valueOf(score));
                 }
-                currentQuestionIndex++; // Chuyển sang câu hỏi tiếp theo
-                loadQuestions(); // Tải câu hỏi mới
-            } else if(view.getId() ==R.id.end_btn){
-                onExitButtonClick();
+                currentQuestionIndex++; // Move to the next question
+                loadQuestions(); // Load the next question
+            } else if (view.getId() == R.id.end_btn) {
+                onExitButtonClick(); // Call the method when the "End" button is clicked
             } else {
-                // Nếu một tùy chọn khác được chọn
+                // If another option is selected
                 selectedAnswer = ((Button) view).getText().toString();
-                view.setBackgroundColor(getColor(R.color.orange)); // Đặt màu nền của nút đã chọn
+                view.setBackgroundColor(getColor(R.color.orange)); // Set the background color of the selected button
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Lỗi Ứng Dụng", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Application error", Toast.LENGTH_SHORT).show();
         }
     }
-    // Phương thức này hiển thị kết quả sau khi hoàn thành bài kiểm tra
+
+    // This method displays the results after completing the quiz
     @SuppressLint("SetTextI18n")
     private void finishQuiz() {
         try {
             int totalQuestions = questionModelList.size();
             int percentage = (int) (((float) score / totalQuestions) * 100);
 
-            // Tạo hộp thoại hiển thị kết quả
+            // Create a dialog to display the results
             ItemScoreDialogBinding dialogBinding = ItemScoreDialogBinding.inflate(getLayoutInflater());
             dialogBinding.scoreProgressIndicator.setProgress(percentage);
             dialogBinding.scoreProgressText.setText(percentage + " %");
-            dialogBinding.scoreTitle.setText("Chúc mừng ban đã hoàn thành bài thi");
+            dialogBinding.scoreTitle.setText("Congratulations, you have completed the quiz");
             dialogBinding.scoreTitle.setTextColor(Color.RED);
-            dialogBinding.scoreSubtitle.setText(score + " trên " + totalQuestions + " chính xác");
-            dialogBinding.finishBtn.setOnClickListener(v -> finish()); // Đóng activity khi nút "Finish" được nhấn
+            dialogBinding.scoreSubtitle.setText(score + " out of " + totalQuestions + " correct");
+            dialogBinding.finishBtn.setOnClickListener(v -> finish()); // Close the activity when the "Finish" button is clicked
 
             new AlertDialog.Builder(this)
                     .setView(dialogBinding.getRoot())
                     .setCancelable(false)
                     .show();
         } catch (Exception e) {
-            Toast.makeText(this, "Lỗi Ứng Dụng", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Application error", Toast.LENGTH_SHORT).show();
         }
     }
-    // Phương thức này hiển thị hộp thoại xác nhận khi người dùng muốn thoát khỏi bài kiểm tra
-    private void showExitConfirmationDialog() {
 
+    // This method displays a confirmation dialog when the user wants to exit the quiz
+    private void showExitConfirmationDialog() {
         new AlertDialog.Builder(this)
-                .setMessage("Bạn có chắc chắn muốn thoát khỏi bài kiểm tra không?")
-                .setPositiveButton("Thoát", new DialogInterface.OnClickListener() {
+                .setMessage("Are you sure you want to exit the quiz?")
+                .setPositiveButton("Exit", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // Kết thúc Activity nếu người dùng chọn thoát 
-                        finishQuiz();
+                        finishQuiz(); // End the activity if the user chooses to exit
                     }
                 })
-                .setNegativeButton("Không", null)
+                .setNegativeButton("No", null)
                 .show();
     }
 
-    // Phương thức này được gọi khi người dùng nhấn nút "Back" trên thiết bị
-    @SuppressLint("MissingSuperCall")
-    @Override
-    public void onBackPressed() {
-        // Hiển thị hộp thoại xác nhận khi người dùng nhấn nút "Back" trên thiết bị
-        showExitConfirmationDialog();
-    }
-
-    // Phương thức này được gọi khi người dùng nhấn nút "Thoát" trên giao diện
+    // This method is called when the user clicks the "Exit" button on the interface
     public void onExitButtonClick() {
-        // Hiển thị hộp thoại xác nhận khi người dùng nhấn nút "Thoát" trên giao diện
-        showExitConfirmationDialog();
+        showExitConfirmationDialog(); // Show the confirmation dialog when the user clicks the "Exit" button on the interface
     }
-
 }

@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuizModel {
-    private String id; // ID của bài kiểm tra
-    private String title; // Tiêu đề của bài kiểm tra
-    private String subtitle; // Phụ đề của bài kiểm tra
-    private String time; // Thời gian làm bài của bài kiểm tra (dưới dạng chuỗi)
-    private List<QuestionModel> questionList; // Danh sách các câu hỏi trong bài kiểm tra
+    private String id; // Quiz ID
+    private String title; // Quiz title
+    private String subtitle; // Quiz subtitle
+    private String time; // Quiz duration as a string
+    private List<QuestionModel> questionList; // List of questions in the quiz
 
-    // Constructor để tạo mới một đối tượng QuizModel
+    // Constructor to create a new QuizModel object
     public QuizModel(String id, String title, String subtitle, String time, List<QuestionModel> questionList) {
         this.id = id;
         this.title = title;
@@ -19,62 +19,53 @@ public class QuizModel {
         this.questionList = questionList;
     }
 
-    // Constructor mặc định không tham số
+    // Default constructor
     public QuizModel() {
         this("", "", "", "", new ArrayList<>());
     }
 
-    // Phương thức getter cho thuộc tính id
+    // Getter and setter for id
     public String getId() {
         return id;
     }
 
-    // Phương thức setter cho thuộc tính id
     public void setId(String id) {
         this.id = id;
     }
 
-    // Phương thức getter cho thuộc tính title
+    // Getter and setter for title
     public String getTitle() {
         return title;
     }
 
-    // Phương thức setter cho thuộc tính title
     public void setTitle(String title) {
         this.title = title;
     }
 
-    // Phương thức getter cho thuộc tính subtitle
+    // Getter and setter for subtitle
     public String getSubtitle() {
         return subtitle;
     }
 
-    // Phương thức setter cho thuộc tính subtitle
     public void setSubtitle(String subtitle) {
         this.subtitle = subtitle;
     }
 
-    // Phương thức getter cho thuộc tính time
+    // Getter and setter for time
     public String getTime() {
         return time;
     }
 
-    // Phương thức setter cho thuộc tính time
     public void setTime(String time) {
         this.time = time;
     }
 
-    // Phương thức getter cho thuộc tính questionList
+    // Getter and setter for questionList
     public List<QuestionModel> getQuestionList() {
         return questionList;
     }
 
-    // Phương thức setter cho thuộc tính questionList
     public void setQuestionList(List<QuestionModel> questionList) {
         this.questionList = questionList;
     }
 }
-
-
-
-
